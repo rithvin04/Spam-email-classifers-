@@ -1,5 +1,5 @@
 # Spam-email-classifers-
-### importimg required models 
+### Importimg required models 
 import numpy as np 
 import pandas as pd 
 from sklearn.model_selection import train_test_split
@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 df = pd.read_csv("C:/Users/rithv/Downloads/mail_data.csv")
 print(df)
 df.head()
-## removing null values from data
+## Removing null values from data
 
 data = df.where((pd.notnull(df)),'')
 data.head()
@@ -22,7 +22,7 @@ Y = data['Category']
 print(X)
 print(Y)
 print(Y)
-## training and testing 
+## Training and Testing 
 
 X_train,X_test,Y_train , Y_test =  train_test_split(X,Y, test_size = 0.2, random_state = 3)
 print(X.shape)
@@ -41,7 +41,7 @@ Y_test =Y_test.astype('int')
 print(Y_train)
 print(X_train)
 print(X_train_features)
-## Using logistic Regression model predicting spam or ham 
+## Using logistic Regression model for  predicting spam or ham 
 
 model = LogisticRegression()
 model.fit(X_train_features,Y_train)
